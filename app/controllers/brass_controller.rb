@@ -1,0 +1,2 @@
+class BrassController < ApplicationController
+end

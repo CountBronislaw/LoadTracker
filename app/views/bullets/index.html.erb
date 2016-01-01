@@ -1,0 +1,29 @@
+<h1>Listing Bullets</h1>
+<%= link_to 'New Bullet', new_bullet_path %>
+
+<table>
+  <tr>
+    <th>Manufacturer</th>
+    <th>Type</th>
+    <th>Name</th>
+    <th>Weight</th>
+    <th>Caliber</th>
+  </tr>
+
+  <% @bullets.each do |bullet| %>
+    <tr>
+      <td><%= bullet.manufacturer %></td>
+      <td><%= bullet.style %></td>
+      <td><%= bullet.name %></td>
+      <td><%= bullet.weight %> gr</td>
+      <td><%= bullet.caliber %></td>
+      <td><%= link_to 'Show', bullet_path(bullet) %></td>
+      <td><%= link_to 'Edit', edit_bullet_path(bullet) %></td>
+      <td><%= link_to 'Delete', bullet_path(bullet),
+              method: :delete,
+              data: {confirm: 'Are you sure you want to delete this bullet?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Home', root_path %>

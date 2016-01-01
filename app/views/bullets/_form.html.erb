@@ -1,0 +1,46 @@
+<%= form_for @bullet do |f| %>
+
+  <% if @bullet.errors.any? %>
+    <div id="error_explanation"> 
+      <h2>
+        <%= pluralize(@bullet.errors.count, "Error") %>
+        prevented this bullet from being saved:
+      </h2>
+      <ul>
+        <% @bullet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :manufacturer %><br>
+    <%= f.text_field :manufacturer %><br>
+  </p>
+
+  <p>
+    <%= f.label :style %><br>
+    <%= f.text_field :style %><br>
+  </p>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br>
+  </p>
+
+  <p>
+    <%= f.label :weight %><br>
+    <%= f.text_field :weight %><br>
+  </p>
+
+  <p>
+    <%= f.label :caliber %><br>
+    <%= f.text_field :caliber %><br>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>

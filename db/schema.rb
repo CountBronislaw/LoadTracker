@@ -14,38 +14,62 @@
 ActiveRecord::Schema.define(version: 20151127055907) do
 
   create_table "batches", force: :cascade do |t|
+    t.integer  "load_id"
+    t.integer  "press_id"
+    t.integer  "quantity"
+    t.text     "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "brasses", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "manufacturer"
+    t.text     "caliber"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "bullets", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "manufacturer"
+    t.text     "style"
+    t.text     "name"
+    t.text     "weight"
+    t.text     "caliber"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "loads", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "bullet_id"
+    t.integer  "powder_id"
+    t.integer  "primer_id"
+    t.integer  "brass_id"
+    t.text     "powder_charge"
+    t.text     "coal"
+    t.text     "name"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "powders", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "manufacturer"
+    t.text     "name"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "presses", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "manufacturer"
+    t.text     "model"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "primers", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "manufacturer"
+    t.text     "size"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end

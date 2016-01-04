@@ -65,3 +65,22 @@ press_list.each do |manufacturer, model, round_count|
 end
 
 puts "Complete"
+
+powder_list = [
+  ["Hodgdon", "HP-38"],
+  ["Hodgdon", "H110"],
+  ["Alliant Powder", "AR Comp"],
+  ["Alliant Powder", "Unique"],
+  ["Hodgdon", "Unique"],
+  ["Winchester", "231"],
+  ["Winchester", "296"],
+  ["Alliant Powder", "Power Pistol"]
+]
+
+puts "Seeding powders..."
+
+powder_list.each do |manufacturer, name|
+  Powder.create(manufacturer: manufacturer, name: name)
+end
+
+puts "Complete"

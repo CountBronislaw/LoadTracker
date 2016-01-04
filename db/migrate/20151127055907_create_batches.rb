@@ -5,6 +5,7 @@ class CreateBatches < ActiveRecord::Migration
       t.belongs_to :press
       
       t.integer :quantity
+      t.integer :brass_trimmed
       t.text :comments
 
       t.timestamps null: false

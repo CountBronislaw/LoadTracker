@@ -17,9 +17,10 @@ ActiveRecord::Schema.define(version: 20151127055907) do
     t.integer  "load_id"
     t.integer  "press_id"
     t.integer  "quantity"
+    t.integer  "brass_trimmed"
     t.text     "comments"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "brasses", force: :cascade do |t|
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 20151127055907) do
     t.text     "powder_charge"
     t.text     "coal"
     t.text     "name"
+    t.text     "load_type"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -61,6 +63,7 @@ ActiveRecord::Schema.define(version: 20151127055907) do
   create_table "presses", force: :cascade do |t|
     t.text     "manufacturer"
     t.text     "model"
+    t.integer  "round_count"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

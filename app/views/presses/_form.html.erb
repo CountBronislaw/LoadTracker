@@ -1,0 +1,36 @@
+<%= form_for @press do |f| %>
+
+  <% if @press.errors.any? %>
+    <div id="error_explanation"> 
+      <h2>
+        <%= pluralize(@press.errors.count, "Error") %>
+        prevented this press from being saved:
+      </h2>
+      <ul>
+        <% @press.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :manufacturer %><br>
+    <%= f.text_field :manufacturer %><br>
+  </p>
+
+  <p>
+    <%= f.label :model %><br>
+    <%= f.text_field :model %><br>
+  </p>
+
+  <p>
+    <%= f.label :round_count %><br>
+    <%= f.text_field :round_count %><br>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>

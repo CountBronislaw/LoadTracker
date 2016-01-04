@@ -9,6 +9,7 @@ class CreateLoads < ActiveRecord::Migration
       t.text :powder_charge
       t.text :coal
       t.text :name
+      t.text :load_type
 
       t.timestamps null: false
     end

@@ -52,3 +52,16 @@ primer_list.each do |manufacturer, size, style|
 end
 
 puts "Complete"
+
+press_list = [
+  ["Dillon", "XL 650", 10000],
+  ["RCBS", "Rock Chucker Supreme", 1500]
+]
+
+puts "Seeding presses..."
+
+press_list.each do |manufacturer, model, round_count|
+  Press.create(manufacturer: manufacturer, model: model, round_count: round_count)
+end
+
+puts "Complete"

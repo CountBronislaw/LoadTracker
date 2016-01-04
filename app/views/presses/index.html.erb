@@ -1,0 +1,26 @@
+<h1>Listing Presses</h1>
+<p>
+  <%= link_to 'New Press', new_press_path %>
+</p>
+
+<table>
+  <tr>
+    <th>Manufacturer</th>
+    <th>Model</th>
+    <th>Round Count</th>
+  </tr>
+  <% @presses.each do |press| %>
+    <tr>
+      <td><%= press.manufacturer %></td>
+      <td><%= press.model %></td>
+      <td><%= press.round_count %></td>
+      <td><%= link_to 'Show', press_path(press) %></td>
+      <td><%= link_to 'Edit', edit_press_path(press) %></td>
+      <td><%= link_to 'Delete', press_path(press),
+              method: :delete,
+              data: {confirm: 'Are you sure you want to delete this press?'} %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Home', root_path %>

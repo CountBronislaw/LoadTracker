@@ -1,0 +1,36 @@
+<%= form_for @primer do |f| %>
+
+  <% if @primer.errors.any? %>
+    <div id="error_explanation"> 
+      <h2>
+        <%= pluralize(@primer.errors.count, "Error") %>
+        prevented this primer from being saved:
+      </h2>
+      <ul>
+        <% @primer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :manufacturer %><br>
+    <%= f.text_field :manufacturer %><br>
+  </p>
+
+  <p>
+    <%= f.label :size %><br>
+    <%= f.text_field :size %><br>
+  </p>
+
+  <p>
+    <%= f.label :style %><br>
+    <%= f.text_field :style %><br>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>

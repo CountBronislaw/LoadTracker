@@ -3,6 +3,7 @@ class CreatePrimers < ActiveRecord::Migration
     create_table :primers do |t|
       t.text :manufacturer
       t.text :size
+      t.text :style
 
       t.timestamps null: false
     end

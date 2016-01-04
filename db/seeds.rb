@@ -29,10 +29,26 @@ brass_list = [
   ["Starline", ".38 Spl"]
 ]
 
-puts "Seeing brass..."
+puts "Seeding brass..."
 
 brass_list.each do |manufacturer, caliber|
   Brass.create(manufacturer: manufacturer, caliber: caliber)
+end
+
+puts "Complete"
+
+primer_list = [
+  ["Winchester", "Small Pistol", "Standard"],
+  ["Winchester", "Small Pistol", "Magnum"],
+  ["CCI", "Small Pistol", "Standard"],
+  ["CCI", "Small Rifle", "Magnum"],
+  ["Federal", "Small Pistol", "Standard"]
+]
+
+puts "Seeding primers..."
+
+primer_list.each do |manufacturer, size, style|
+  Primer.create(manufacturer: manufacturer, size: size, style: style)
 end
 
 puts "Complete"

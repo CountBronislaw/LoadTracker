@@ -1,5 +1,5 @@
 class BrassesController < ApplicationController
-    def index
+  def index
     @brasses = Brass.all
   end
 

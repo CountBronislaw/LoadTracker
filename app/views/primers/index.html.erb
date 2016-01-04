@@ -1,0 +1,26 @@
+<h1>Listing Primers</h1>
+<p>
+  <%= link_to 'New Primer', new_primer_path %>
+</p>
+
+<table>
+  <tr>
+    <th>Manufacturer</th>
+    <th>Size</th>
+    <th>Type</th>
+  </tr>
+  <% @primers.each do |primer| %>
+    <tr>
+      <td><%= primer.manufacturer %></td>
+      <td><%= primer.size %></td>
+      <td><%= primer.style %></td>
+      <td><%= link_to 'Show', primer_path(primer) %></td>
+      <td><%= link_to 'Edit', edit_primer_path(primer) %></td>
+      <td><%= link_to 'Delete', primer_path(primer),
+              method: :delete,
+              data: {confirm: 'Are you sure you want to delete this primer?'} %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Home', root_path %>

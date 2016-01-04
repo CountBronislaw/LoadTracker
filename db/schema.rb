@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20151127055907) do
   create_table "primers", force: :cascade do |t|
     t.text     "manufacturer"
     t.text     "size"
+    t.text     "style"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

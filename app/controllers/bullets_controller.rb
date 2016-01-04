@@ -1,5 +1,4 @@
 class BulletsController < ApplicationController
-
   def index
     @bullets = Bullet.all
   end
@@ -47,5 +46,4 @@ class BulletsController < ApplicationController
     def bullet_params
       params.require(:bullet).permit(:manufacturer, :style, :name, :weight, :caliber)
     end
-
 end

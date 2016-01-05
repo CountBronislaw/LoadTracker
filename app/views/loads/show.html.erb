@@ -1,0 +1,48 @@
+<% if @load.name.empty? %>
+  <h1>Showing Load</h1>
+<% else %>
+  <h1>Showing <%= @load.name %></h1>
+<% end %>
+
+<% bullet = Bullet.find(@load.bullet_id) %>
+<% powder = Powder.find(@load.powder_id) %>
+<% primer = Primer.find(@load.primer_id) %>
+
+<p>
+  <strong>Load Type: </strong>
+  <%= @load.load_type %>
+</p>
+
+<p>
+  <strong>Load Caliber: </strong>
+  <%= bullet.caliber %>
+</p>
+
+<p>
+  <strong>Bullet: </strong>
+  <%= get_bullet_name(@load.bullet_id) %>
+</p>  
+
+<p>
+  <strong>Primer: </strong>
+  <%= get_primer_name(@load.primer_id) %>
+</p>
+
+<p>
+  <strong>Powder Charge: </strong>
+  <%= powder_with_charge(@load.powder_id, @load.powder_charge) %>
+</p>
+
+<p>
+  <strong>COAL: </strong>
+  <%= @load.coal %>
+</p>
+
+<p>
+  <strong>Times Reloaded: </strong>
+  TO BE IMPLEMENTED
+</p>
+
+<p>
+  <%= link_to 'Back', loads_path %>
+</p>

@@ -4,7 +4,6 @@ class CreateLoads < ActiveRecord::Migration
       t.belongs_to :bullet
       t.belongs_to :powder
       t.belongs_to :primer
-      t.belongs_to :brass
 
       t.text :powder_charge
       t.text :coal

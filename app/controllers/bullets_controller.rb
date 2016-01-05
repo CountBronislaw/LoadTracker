@@ -1,4 +1,6 @@
 class BulletsController < ApplicationController
+  helper :all
+
   def index
     @bullets = Bullet.all
   end
@@ -16,6 +18,8 @@ class BulletsController < ApplicationController
   end
 
   def create
+    # Append "gr" to the bullet weight
+    params[:bullet][:weight] << " gr"
     @bullet = Bullet.new(bullet_params)
 
     if @bullet.save
@@ -41,7 +45,7 @@ class BulletsController < ApplicationController
 
     redirect_to bullets_path
   end
-
+  
   private
     def bullet_params
       params.require(:bullet).permit(:manufacturer, :style, :name, :weight, :caliber)

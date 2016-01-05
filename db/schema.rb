@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20151127055907) do
 
   create_table "batches", force: :cascade do |t|
     t.integer  "load_id"
+    t.integer  "brass_id"
     t.integer  "press_id"
     t.integer  "quantity"
     t.integer  "brass_trimmed"
@@ -44,7 +45,6 @@ ActiveRecord::Schema.define(version: 20151127055907) do
     t.integer  "bullet_id"
     t.integer  "powder_id"
     t.integer  "primer_id"
-    t.integer  "brass_id"
     t.text     "powder_charge"
     t.text     "coal"
     t.text     "name"

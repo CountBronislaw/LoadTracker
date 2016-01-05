@@ -1,5 +1,5 @@
 class Brass < ActiveRecord::Base
-  has_many :loads
+  has_many :batches
 
   validates :manufacturer, presence: true
   validates :caliber, presence: true

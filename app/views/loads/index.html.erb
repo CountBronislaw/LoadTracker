@@ -1,0 +1,34 @@
+<h1>Listing Loads</h1>
+<%= link_to 'New Load', new_load_path %>
+
+<table>
+  <tr>
+    <th>Load Type</th>
+    <th>Caliber</th>
+    <th>Load Name</th>
+    <th>Bullet</th>
+    <th>Primer</th>
+    <th>Powder Charge</th>
+    <th>COAL</th>
+  </tr>
+  <% @loads.each do |load| %>
+    <tr>
+      <% bullet = Bullet.find(load.bullet_id) %>
+      <td><%= load.load_type %></td>
+      <td><%= bullet.caliber %></td>
+      <td><%= load.name %></td>
+      <td><%= get_bullet_name(load.bullet_id) %></td>
+      <td><%= get_primer_name(load.primer_id) %></td>
+      <td><%= powder_with_charge(load.powder_id, 
+              load.powder_charge) %></td>
+      <td><%= load.coal %></td>
+      <td><%= link_to 'Show', load_path(load) %></td>
+      <td><%= link_to 'Edit', edit_load_path(load) %></td>
+      <td><%= link_to 'Delete', load_path(load),
+              method: :delete,
+              data: {confirm: 'Are you sure you want to delete this load?'} %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Home', root_path %>

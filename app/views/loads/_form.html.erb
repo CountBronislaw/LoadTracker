@@ -1,0 +1,59 @@
+<%= form_for @load do |f| %>
+
+  <% if @load.errors.any? %>
+    <div id="error_explanation"> 
+      <h2>
+        <%= pluralize(@load.errors.count, "Error") %>
+        prevented this load from being saved:
+      </h2>
+      <ul>
+        <% @load.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <strong>Load Type: </strong>
+    <%= f.radio_button :load_type, 'Pistol' %>
+    <%= f.label :load_type, value: 'Pistol' %>
+    <%= f.radio_button :load_type, 'Rifle' %>
+    <%= f.label :load_type, value: 'Rifle' %>
+  </p>
+
+  <p>
+    <strong>Bullet: </strong>
+    <%= f.collection_select(:bullet_id, Bullet.all, :id, 
+       :build_name) %>
+  </p>
+
+  <p>
+    <strong>Primer: </strong>
+    <%= f.collection_select(:primer_id, Primer.all, :id, 
+       :build_name) %>
+  </p>
+
+  <p>
+    <strong>Powder: </strong>
+    <%= f.collection_select(:powder_id, Powder.all, :id, 
+       :build_name) %>
+
+    <strong><%= f.label :powder_charge, "Powder Charge" %></strong>
+    <%= f.text_field :powder_charge %>
+  </p>
+
+  <p>
+    <strong><%= f.label :coal, "COAL: " %></strong>
+    <%= f.text_field :coal %>
+  </p>
+
+  <p>
+    <strong><%= f.label :name, "Load Name (Optional): " %></strong>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.submit "Save Load" %>
+  </p>
+<% end %>

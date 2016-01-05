@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :bullets, :brasses, :primers, :powders, :presses
+  resources :bullets, :brasses, :primers, :powders, :presses, :loads
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

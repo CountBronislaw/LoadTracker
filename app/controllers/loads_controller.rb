@@ -45,6 +45,6 @@ class LoadsController < ApplicationController
   private
     def load_params
       params.require(:load).permit(:bullet_id, :powder_id, :primer_id, 
-                    :powder_charge, :coal, :name, :load_type)
+         :powder_charge, :coal, :name, :load_type)
     end
 end

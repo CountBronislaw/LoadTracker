@@ -6,9 +6,40 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
-<%= yield %>
+<%# Navbar %>
+<body style="padding-top: 50px;">
+  <div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+          <%= link_to 'LoadTracker', root_path, class: 'navbar-brand' %>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
 
+        <div class="navbar-collapse collapse" id="navbar-main" >
+          <ul class="nav navbar-nav">
+            <li><%= link_to 'Bullets', controller: 'bullets' %></li>
+            <li><%= link_to 'Loads', controller: 'loads' %></li>
+          </ul>
+        </div>
+    </div>
+  </div>
+
+  <%# Content %>
+  <div class="container">
+    <%= yield %>
+
+    <%# Footer %>
+    <footer>
+      <div class="row">
+        <hr>
+        <p>&copy 2017 Travis Carney, all rights reserved.</p>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
